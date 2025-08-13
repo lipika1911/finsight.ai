@@ -14,8 +14,9 @@ export default function ClerkThemeProvider({ children }: ClerkThemeProviderProps
 
   return (
     <ClerkProvider
+      key={theme} // forces remount on theme change
       appearance={{
-        baseTheme: isDark ? dark : undefined,
+        baseTheme: isDark ? dark : undefined, // undefined = default light
         variables: {
           colorPrimary: 'var(--primary)',
           colorBackground: 'var(--background)',
@@ -28,13 +29,13 @@ export default function ClerkThemeProvider({ children }: ClerkThemeProviderProps
             backgroundColor: 'var(--primary)',
             color: 'var(--primary-foreground)',
             '&:hover': {
-              opacity: '0.9',
+              opacity: 0.9,
             },
           },
           card: {
             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
             backdropFilter: 'blur(16px)',
-            border: `1px solid var(--border)`,
+            border: '1px solid var(--border)',
             backgroundColor: 'var(--card)',
           },
           headerTitle: {
@@ -44,7 +45,7 @@ export default function ClerkThemeProvider({ children }: ClerkThemeProviderProps
             color: 'var(--muted-foreground)',
           },
           socialButtonsBlockButton: {
-            border: `1px solid var(--border)`,
+            border: '1px solid var(--border)',
             backgroundColor: 'var(--card)',
             backdropFilter: 'blur(8px)',
           },
@@ -54,7 +55,7 @@ export default function ClerkThemeProvider({ children }: ClerkThemeProviderProps
           formFieldInput: {
             backgroundColor: 'var(--input)',
             backdropFilter: 'blur(8px)',
-            border: `1px solid var(--border)`,
+            border: '1px solid var(--border)',
             color: 'var(--foreground)',
           },
         },

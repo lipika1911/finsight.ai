@@ -185,17 +185,18 @@ export default function Navbar() {
               </SignedOut>
 
               <SignedIn>
-                <div className="flex items-center justify-center p-3 rounded-full bg-accent/50 backdrop-blur-sm emerald-border">
-                  <UserButton
-                    appearance={{
-                      elements: {
-                        avatarBox: "w-10 h-10 rounded-full hover:scale-110 transition-transform duration-200",
-                        userButtonBox: "flex items-center justify-center",
-                      },
-                    }}
-                  />
-                </div>
+                <UserButton
+                  appearance={{
+                    elements: {
+                      avatarBox:
+                        "w-10 h-10 sm:w-10 sm:h-10 rounded-full hover:scale-110 transition-transform duration-200",
+                      userButtonBox:
+                        "flex items-center justify-center h-14 sm:h-16", // match navbar height
+                    },
+                  }}
+                />
               </SignedIn>
+
             </div>
           </div>
         </div>
